@@ -193,26 +193,7 @@ int main() {
 
                     turno++;
                 }
-
-                // if (vidas > 0) {
-                //     cout << "\n¡Felicidades, Dr/a. " << nombreMedico << "! Completaste la guardia!\n";
-                //     cout << "Puntaje final: " << puntaje << " decisiones correctas.\n";
-                //     cout << "Vidas restantes: " << vidas << endl;
-
-                //     cout << "\nPresioná ENTER para jugar de nuevo\n";
-                //     cin.ignore().get();
-                //     system("clear");
-                // }
-
-                // if (pacientesSalvados == 3) {
-                //     cout << "\nBien ahí, Dr/a. " << nombreMedico << "! ¡Salvaste a 3 pacientes seguidos!\n";
-                //     cout << "Ya te podés ir a tu casa a descansar. 🏠🩺\n";
-                //     cout << "Puntaje final: " << puntaje << " decisiones correctas.\n";
-
-                //     cout << "\nPresioná ENTER para jugar de nuevo\n";
-                //     cin.ignore().get();
-                //     system("clear");
-                // }
+                
                 break;
             }
 
