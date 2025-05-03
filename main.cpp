@@ -16,13 +16,25 @@ int main() {
     int puntaje = 0;
     int vidas = 3;
 
+    ///// (lo que pongas aca R"()""; abajo lo toma literal) /////
+    cout << R"(
+    ----------------------
+        TITULO ASCII
+    ----------------------
+    )";
+
+    cout << "Presioná ENTER para comenzar";
+    cin.get();
+    system("clear");
+
     while (continuar) {
-        cout << "\n=== URGENCIAS: AVENTURA HOSPITALARIA ===\n";
+        cout << R"(   (DIBUJO)   )" << endl;
+        cout << endl;
         cout << "1. Jugar\n";
         cout << "2. Historia\n";
         cout << "3. Créditos\n";
         cout << "4. Salir\n";
-        cout << "Seleccioná una opción: ";
+        cout << "\nSeleccioná una opción: ";
         cin >> opcionMenu;
 
         switch (opcionMenu) {
@@ -34,8 +46,10 @@ int main() {
                 system("clear");
 
                 cout << "\nIngresá tu nombre, doctor/a: ";
+                ///// DIBUJO DOCTOR/A /////
                 cin >> nombreMedico;
-
+                
+                ///// DESARROLLAR CONTEXTO /////
                 cout << "\nBienvenido/a, Dr/a. " << nombreMedico << ".\nHoy tenés un turno de guardia intensiva toda la noche.\nSos el/la únicx médicx en el hospital. \n";
 
                 int pacientesSalvados = 0;
@@ -46,9 +60,11 @@ int main() {
                     sleep(3);
                     
                     cout << "\n\nTurno #" << turno << " - Vidas restantes: " << vidas << "\n" << endl;
+
+                    ///// AGREGARLE DRAMATISMO /////
                     cout << "Llegan pacientes:\n";
                     cout << "1. Paciente 1: Persona joven con dolor de cabeza\n";
-                    cout << "2. Paciente 2: Dolor en el pecho (grave)\n";
+                    cout << "2. Paciente 2: Dolor en el pecho\n";
                     cout << "3. Paciente 3: Herido por una riña\n\n";
                     cout << "¿A quién deseas atender?: \n";
                     cin >> decision;
@@ -57,6 +73,7 @@ int main() {
                     sleep(3);
 
                     if (decision == 1) {
+                        ///// REVISAR OPCIONES. SI ES NECESARIO AGREGAR DRAMATISMO. /////
                         cout << "¿Qué tratamiento le das?: \n";
                         cout << "1. Recetar paracetamol y reposo\n";
                         cout << "2. Inducir coma farmacológico\n";
@@ -65,6 +82,7 @@ int main() {
                         cout << "........................................\n";
                         sleep(3);
 
+                        ///// REVISAR RESULTADOS. SI ES NECESARIO AGREGAR DRAMATISMO. /////
                         if (decision == 1) {
                             cout << "\nEl paciente descansa y se recupera por completo. ✅\n";
                             puntaje += 1;
@@ -92,13 +110,9 @@ int main() {
                         } else if (decision == 3) {
                             cout << "\nEl paciente se desploma a los 20 metros. Lo revivís como podés, pero queda muy complicado. ⚠️\n";
                             vidaPaciente -= 50;
-                        } else {
-                            cout << "Opción inválida. Vamos de nuevo...\n";
-                            turno--;
-                            continue;
                         }
 
-
+                    ///// REVISAR OPCIONES. SI ES NECESARIO AGREGAR DRAMATISMO. /////
                     } else if (decision == 3) {
                         cout << "\nEl paciente tiene una herida profunda en la pierna.\n¿Qué tratamiento deseas aplicar?\n\n";
                         cout << "1. Operar\n";
@@ -109,6 +123,7 @@ int main() {
                         sleep(3);
 
                         if (decision == 1) {
+                            ///// REVISAR OPCIONES. SI ES NECESARIO AGREGAR DRAMATISMO. /////
                             cout << "\n¿Tipo de operación?\n";
                             cout << "1. Operarle la pierna\n";
                             cout << "2. Abrirle la panza\n";
@@ -118,6 +133,7 @@ int main() {
                             cout << "........................................\n";
                             sleep(3);
 
+                            ///// REVISAR RESULTADOS. SI ES NECESARIO AGREGAR DRAMATISMO. /////
                             if (decision == 1) {
                                 cout << "\n¡Cirugía exitosa! El paciente evoluciona bien. ✅\n";
                                 puntaje += 1;
@@ -129,10 +145,12 @@ int main() {
                                 vidaPaciente -= 60;
                                 puntaje += 1;
                             }
+
                         } else if (decision == 2) {
                             cout << "\nEl paciente es dado de alta muy pronto.\nMuere al llegar a su casa. ❌\n";
                             vidaPaciente = 0;
                         }
+
                     } else {
                         cout << "Opción inválida. Vamos de nuevo...\n";
                         turno--;
@@ -145,14 +163,14 @@ int main() {
 
                     // Mostrar barra de vida con FOR
                     cout << "Vida del paciente: [";
-                    int vidaVisual = vidaPaciente / 5; // de 0 a 20 bloques
+                    int vidaVisual = vidaPaciente / 5;
                     for (int i = 0; i < 20; i++) {
                         if (i < vidaVisual) cout << "#";
                         else cout << " ";
                     }
                     cout << "] " << vidaPaciente << "%\n";
 
-                    //Estado del paciente
+                    //Estado final del paciente
                     if (vidaPaciente >= 70) {
                         cout << "Estado del paciente: ESTABLE ✅ (vida: " << vidaPaciente << "%)\n";
                         pacientesSalvados++;
@@ -169,6 +187,8 @@ int main() {
                     if (vidas <= 0) {
                         cout << "............................................................";
                         sleep(3);
+                        ///// DIBUJO GAME OVER. /////
+                        system("clear");
                         cout << "\n\nTe quedaste sin vidas. GAME OVER!\n";
                         cout << "\nPresioná ENTER para jugar de nuevo\n";
                         cin.ignore().get();
@@ -181,6 +201,7 @@ int main() {
                     sleep(3);
 
                     if (pacientesSalvados >= 3) {
+                        ///// DIBUJO VICTORIA. /////
                         cout << "\nBien ahí, Dr/a. " << nombreMedico << "! ¡Salvaste a 3 pacientes seguidos!\n";
                         cout << "Ya te podés ir a tu casa a descansar. 🏠🩺\n";
                         cout << "Puntaje final: " << puntaje << " decisiones correctas.\n";
@@ -193,22 +214,24 @@ int main() {
 
                     turno++;
                 }
-                
+
                 break;
             }
 
             case 2:
                 system("clear");
+                ///// DIBUJO /////
                 cout << "\nHISTORIA:\n";
                 cout << "Sos un joven médico recièn recibido enfrentando decisiones críticas en la sala de urgencias de un hospital público.\n";
                 cout << "Cada elección que tomes puede salvar una vida... o no.\n\n";
-                cout << "Presioná ENTER para volver al menù principal\n";
+                cout << "Presioná ENTER para volver al menú principal\n";
                 cin.ignore().get();
                 system("clear");
                 break;
 
             case 3: {
                 system("clear");
+                ///// Dibujo / nombres con tipografia /////
                 cout << "\nDesarrollado por....(completar)\n\n";
                 cout << "Presioná ENTER para volver al menù principal\n";
                 cin.ignore().get();
@@ -218,6 +241,8 @@ int main() {
 
             case 4:
                 continuar = false;
+                system("clear");
+                ///// Dibujo con saludo /////
                 cout << "\nGracias por jugar. ¡Hasta pronto!\n\n";
                 cout << "Presioná ENTER para terminar\n";
                 cin.ignore().get();
