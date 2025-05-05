@@ -52,34 +52,44 @@ int main() {
                 ///// DESARROLLAR CONTEXTO /////
                 cout << "\nBienvenido/a, Dr/a. " << nombreMedico << ".\nHoy tenés un turno de guardia intensiva toda la noche.\nSos el/la únicx médicx en el hospital. \n";
 
+                cout << "\nPresioná ENTER para continuar\n";
+                cin.ignore().get();
+                system("clear");
+
                 int pacientesSalvados = 0;
                 int turno = 1;
                 while (vidas > 0) {
                     vidaPaciente = 100.0;
-
-                    sleep(3);
                     
-                    cout << "\n\nTurno #" << turno << " - Vidas restantes: " << vidas << "\n" << endl;
+                    cout << "\nTurno #" << turno << " - Vidas restantes: " << vidas << "\n" << endl;
+                    sleep(2);
 
                     ///// AGREGARLE DRAMATISMO /////
-                    cout << "Llegan pacientes:\n";
-                    cout << "1. Paciente 1: Persona joven con dolor de cabeza\n";
-                    cout << "2. Paciente 2: Dolor en el pecho\n";
-                    cout << "3. Paciente 3: Herido por una riña\n\n";
-                    cout << "¿A quién deseas atender?: \n";
-                    cin >> decision;
+                    do {
+                        system("clear");
+                        cout << "Llegan pacientes:\n\n";
+                        cout << "1. Paciente 1: Persona joven con dolor de cabeza\n";
+                        cout << "2. Paciente 2: Dolor en el pecho\n";
+                        cout << "3. Paciente 3: Herido por una riña\n\n";
+                        cout << "¿A quién deseas atender?: \n";
+                        cin >> decision;
+                        cout << "\n";
+                    } while (decision != 1 && decision != 2 && decision != 3);
 
-                    cout << "........................................\n";
-                    sleep(3);
+                    sleep(2);
 
                     if (decision == 1) {
                         ///// REVISAR OPCIONES. SI ES NECESARIO AGREGAR DRAMATISMO. /////
-                        cout << "¿Qué tratamiento le das?: \n";
-                        cout << "1. Recetar paracetamol y reposo\n";
-                        cout << "2. Inducir coma farmacológico\n";
-                        cin >> decision;
+                        do {
+                            system("clear");
+                            cout << "¿Qué tratamiento le das?: \n\n";
+                            cout << "1. Recetar paracetamol y reposo\n";
+                            cout << "2. Inducir coma farmacológico\n";
+                            cin >> decision;
+                            cout << "\n";
+                        } while (decision != 1 && decision != 2);
 
-                        cout << "........................................\n";
+                        system("clear");
                         sleep(3);
 
                         ///// REVISAR RESULTADOS. SI ES NECESARIO AGREGAR DRAMATISMO. /////
@@ -92,13 +102,17 @@ int main() {
                         }
 
                     } else if (decision == 2) {
-                        cout << "\nEntra el paciente con dolor de pecho y cara de preocupación. ¿Qué hacés?\n";
-                        cout << "1. Le das un mate y le decís que se relaje\n";
-                        cout << "2. Llamás a un cardiólogo y lo mandás directo a la unidad coronaria\n";
-                        cout << "3. Lo hacés correr una vuelta a la manzana para ver si se le pasa\n";
-                        cin >> decision;
+                        do {
+                            system("clear");
+                            cout << "\nEntra el paciente con dolor de pecho y cara de preocupación. ¿Qué hacés?\n\n";
+                            cout << "1. Le das un mate y le decís que se relaje\n";
+                            cout << "2. Llamás a un cardiólogo y lo mandás directo a la unidad coronaria\n";
+                            cout << "3. Lo hacés correr una vuelta a la manzana para ver si se le pasa\n";
+                            cin >> decision;
+                            cout << "\n";
+                        } while (decision != 1 && decision != 2 && decision != 3);
 
-                        cout << "........................................\n";
+                        system("clear");
                         sleep(3);
 
                         if (decision == 1) {
@@ -114,24 +128,31 @@ int main() {
 
                     ///// REVISAR OPCIONES. SI ES NECESARIO AGREGAR DRAMATISMO. /////
                     } else if (decision == 3) {
-                        cout << "\nEl paciente tiene una herida profunda en la pierna.\n¿Qué tratamiento deseas aplicar?\n\n";
-                        cout << "1. Operar\n";
-                        cout << "2. Dar medicamento y mandarlo a casa\n";
-                        cin >> decision;
+                        do {
+                            system("clear");
+                            cout << "\nEl paciente tiene una herida profunda en la pierna.\n¿Qué tratamiento deseas aplicar?\n\n";
+                            cout << "1. Operar\n";
+                            cout << "2. Dar medicamento y mandarlo a casa\n";
+                            cin >> decision;
+                            cout << "\n";
+                        } while (decision != 1 && decision != 2);
 
-                        cout << "........................................\n";
-                        sleep(3);
+                        sleep(2);
 
                         if (decision == 1) {
                             ///// REVISAR OPCIONES. SI ES NECESARIO AGREGAR DRAMATISMO. /////
-                            cout << "\n¿Tipo de operación?\n";
-                            cout << "1. Operarle la pierna\n";
-                            cout << "2. Abrirle la panza\n";
-                            cout << "3. Amputarle la pierna\n";
-                            cin >> decision;
+                            do {
+                                system("clear");
+                                cout << "\n¿Tipo de operación?\n\n";
+                                cout << "1. Operarle la pierna\n";
+                                cout << "2. Abrirle la panza\n";
+                                cout << "3. Amputarle la pierna\n";
+                                cin >> decision;
+                                cout << "\n";
+                            } while (decision != 1 && decision != 2 && decision != 3);
 
-                            cout << "........................................\n";
-                            sleep(3);
+                            system("clear");
+                            sleep(2);
 
                             ///// REVISAR RESULTADOS. SI ES NECESARIO AGREGAR DRAMATISMO. /////
                             if (decision == 1) {
@@ -147,6 +168,7 @@ int main() {
                             }
 
                         } else if (decision == 2) {
+                            system("clear");
                             cout << "\nEl paciente es dado de alta muy pronto.\nMuere al llegar a su casa. ❌\n";
                             vidaPaciente = 0;
                         }
@@ -199,6 +221,7 @@ int main() {
 
                     cout << "............................................................\n";
                     sleep(3);
+                    system("clear");
 
                     if (pacientesSalvados >= 3) {
                         ///// DIBUJO VICTORIA. /////
