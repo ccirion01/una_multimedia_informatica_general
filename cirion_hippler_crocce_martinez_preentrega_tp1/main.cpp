@@ -18,23 +18,32 @@ int main() {
 
     ///// (lo que pongas aca R"()""; abajo lo toma literal) /////
     cout << R"(
-    ----------------------
-        TITULO ASCII
-    ----------------------
-    )";
+        _________________________________
+       |                                 |
+       |  HOSPITAL EL ÚLTIMO ALIENTO     |
+       |  "Donde la muerte es solo un    |
+       |   efecto secundario"            |
+       |_________________________________|
+        )";
+    
 
-    cout << "Presioná ENTER para comenzar";
+    cout << "\nPresiona ENTER para comenzar (si te atreves)...";
     cin.get();
     system("clear");
 
     while (continuar) {
-        cout << R"(   (DIBUJO)   )" << endl;
-        cout << endl;
-        cout << "1. Jugar\n";
-        cout << "2. Historia\n";
-        cout << "3. Créditos\n";
-        cout << "4. Salir\n";
-        cout << "\nSeleccioná una opción: ";
+        cout << "Seleccioná una opción: \n";
+        cout << R"(
+        ╔══╗░░░░░░░░░░░░░░░░░░░╔╗░░░░
+        ║██║░░░¡MENÚ DEL CAOS!░║║░░░░
+        ║██╠═══════════════════╣║░░░░
+        ║██║1. Jugar░░░░░░░░░░░║║░░░░
+        ║██║2. Historia░░░░░░░░║║░░░░
+        ║██║3. Créditos░░░░░░░░║╚╗░░░
+        ║██║4. Salir░░░░░░░░░░░║▓║░░░
+        ╚══╝░░░░░░░░░░░░░░░░░░░╚═╝░░░
+        )" << endl;
+        cout << endl;        
         cin >> opcionMenu;
 
         switch (opcionMenu) {
@@ -45,14 +54,23 @@ int main() {
                 
                 system("clear");
 
-                cout << "\nIngresá tu nombre, doctor/a: ";
-                ///// DIBUJO DOCTOR/A /////
+                cout << R"(
+                ╔════╗    DOCTOR/A!
+                ║🧑⚕️║ Ingresa tu nombre:
+                ╚══╦═╝
+                )";
                 cin >> nombreMedico;
                 
-                ///// DESARROLLAR CONTEXTO /////
-                cout << "\nBienvenido/a, Dr/a. " << nombreMedico << ".\nHoy tenés un turno de guardia intensiva toda la noche.\nSos el/la únicx médicx en el hospital. \n";
+cout << R"( 
+Hoy tenés el privilegio exclusivo de ser:
+¡LA ÚNICA PERSONA EN 20 KM A LA REDONDA QUE SABE USAR UN TERMÓMETRO!
 
-                cout << "\nPresioná ENTER para continuar\n";
+Preparate para:
+- Diagnosticar males inexistentes
+- Hacer suturas con hilo dental
+- Y rezar infinitamente padres nuestros)" << "\n";
+
+                cout << "\nPresiona ENTER para continuar\n";
                 cin.ignore().get();
                 system("clear");
 
@@ -61,16 +79,16 @@ int main() {
                 while (vidas > 0) {
                     vidaPaciente = 100.0;
                     
-                    cout << "\nTurno #" << turno << " - Vidas restantes: " << vidas << "\n" << endl;
-                    sleep(2);
+                    cout << "Turno #" << turno << " - Vidas restantes: " << vidas << "\n" << endl;
 
-                    ///// AGREGARLE DRAMATISMO /////
+                    sleep(2);                    
+
                     do {
                         system("clear");
                         cout << "Llegan pacientes:\n\n";
-                        cout << "1. Paciente 1: Persona joven con dolor de cabeza\n";
-                        cout << "2. Paciente 2: Dolor en el pecho\n";
-                        cout << "3. Paciente 3: Herido por una riña\n\n";
+                        cout << "1. Influencer con migraña apocalíptica\n";
+                        cout << "2. Jubilado infartado\n";
+                        cout << "3. Pelea legendaria\n\n";
                         cout << "¿A quién deseas atender?: \n";
                         cin >> decision;
                         cout << "\n";
@@ -79,12 +97,12 @@ int main() {
                     sleep(2);
 
                     if (decision == 1) {
-                        ///// REVISAR OPCIONES. SI ES NECESARIO AGREGAR DRAMATISMO. /////
                         do {
                             system("clear");
+                            cout << "Un influencer de 19 años con 'el peor dolor de cabeza de la historia del universo'.\n";
                             cout << "¿Qué tratamiento le das?: \n\n";
-                            cout << "1. Recetar paracetamol y reposo\n";
-                            cout << "2. Inducir coma farmacológico\n";
+                            cout << "1.Paracetamol y decirle que deje el celular.\n";
+                            cout << "2.Inducir coma y grabar un unboxing médico.\n";
                             cin >> decision;
                             cout << "\n";
                         } while (decision != 1 && decision != 2);
@@ -92,22 +110,21 @@ int main() {
                         system("clear");
                         sleep(3);
 
-                        ///// REVISAR RESULTADOS. SI ES NECESARIO AGREGAR DRAMATISMO. /////
                         if (decision == 1) {
-                            cout << "\nEl paciente descansa y se recupera por completo. ✅\n";
+                            cout << "MILAGRO MODERNO:\nEl joven sobrevive... pero pierde 10k seguidores por no subir contenido.✅ \n";
                             puntaje += 1;
                         } else if (decision == 2) {
-                            cout << "\nMe parece que fue un montón. El paciente no despierta del coma. ❌\n";
+                            cout << "EFECTO SECUNDARIO:\nSu coma se vuelve tendencia. #DesafíoDelComa. 4 no despiertan. La OMS te odia.❌\n";
                             vidaPaciente = 0;
                         }
 
                     } else if (decision == 2) {
                         do {
                             system("clear");
-                            cout << "\nEntra el paciente con dolor de pecho y cara de preocupación. ¿Qué hacés?\n\n";
+                            cout << "Un jubilado de 72 años entra sudoroso, agarrándose el pecho como si acabara de ver la factura de la luz. ¿Qué hacés?\n\n";
                             cout << "1. Le das un mate y le decís que se relaje\n";
-                            cout << "2. Llamás a un cardiólogo y lo mandás directo a la unidad coronaria\n";
-                            cout << "3. Lo hacés correr una vuelta a la manzana para ver si se le pasa\n";
+                            cout << "2. Cardiólogo por Zoom y ECG.\n";
+                            cout << "3. Electrodos conectados a la cafetera.\n";
                             cin >> decision;
                             cout << "\n";
                         } while (decision != 1 && decision != 2 && decision != 3);
@@ -116,23 +133,22 @@ int main() {
                         sleep(3);
 
                         if (decision == 1) {
-                            cout << "\nEl paciente se relaja... demasiado. Se desmaya en la sala y no vuelve a despertar. ❌\n";
+                            cout << "El paciente se relaja... demasiado. Se desmaya en la sala y no vuelve a despertar. ❌\n";
                             vidaPaciente = 0;
                         } else if (decision == 2) {
-                            cout << "\n¡Excelente! El tratamiento de urgencia fue exitoso. El paciente está fuera de peligro. ✅\n";
+                            cout << "MILAGRO TECNOLÓGICO:\nEl cardiólogo remoto grita '¡Lo tenemos!'. Sobrevive sin secuelas. ✅\n";
                             puntaje += 1;
                         } else if (decision == 3) {
-                            cout << "\nEl paciente se desploma a los 20 metros. Lo revivís como podés, pero queda muy complicado. ⚠️\n";
+                            cout << "EPIC FAIL:\nEl monitor hace corto y lo reanima, pero le cae todo el cafe encima \ny ahora tiene quemaduras de tercer grado.⚠️\n";
                             vidaPaciente -= 50;
                         }
 
-                    ///// REVISAR OPCIONES. SI ES NECESARIO AGREGAR DRAMATISMO. /////
                     } else if (decision == 3) {
                         do {
                             system("clear");
-                            cout << "\nEl paciente tiene una herida profunda en la pierna.\n¿Qué tratamiento deseas aplicar?\n\n";
-                            cout << "1. Operar\n";
-                            cout << "2. Dar medicamento y mandarlo a casa\n";
+                            cout << "Una persona con un tajo en la pierna tras pelearse con un perro salchicha.\n¿Qué tratamiento deseas aplicar?\n\n";
+                            cout << "1.Operar. Que podria malir sal?.\n";
+                            cout << "2.Mandar a casa con curitas.\n";
                             cin >> decision;
                             cout << "\n";
                         } while (decision != 1 && decision != 2);
@@ -140,13 +156,12 @@ int main() {
                         sleep(2);
 
                         if (decision == 1) {
-                            ///// REVISAR OPCIONES. SI ES NECESARIO AGREGAR DRAMATISMO. /////
                             do {
                                 system("clear");
-                                cout << "\n¿Tipo de operación?\n\n";
-                                cout << "1. Operarle la pierna\n";
-                                cout << "2. Abrirle la panza\n";
-                                cout << "3. Amputarle la pierna\n";
+                                cout << "¿Tipo de operación?\n\n";
+                                cout << "1.Suturar con hilo dental\n";
+                                cout << "2.Abrir panza 'por si acaso'\n";
+                                cout << "3.Amputar exprés\n";
                                 cin >> decision;
                                 cout << "\n";
                             } while (decision != 1 && decision != 2 && decision != 3);
@@ -154,22 +169,21 @@ int main() {
                             system("clear");
                             sleep(2);
 
-                            ///// REVISAR RESULTADOS. SI ES NECESARIO AGREGAR DRAMATISMO. /////
                             if (decision == 1) {
-                                cout << "\n¡Cirugía exitosa! El paciente evoluciona bien. ✅\n";
+                                cout << "La cicatriz quedó con forma del logo de Marvel. Lo subís a Instagram,\nte llueven seguidores y clientes. Felicitaciones, ya no sos pobre. ✅\n";
                                 puntaje += 1;
                             } else if (decision == 2) {
-                                cout << "\nComplicaciones internas... El paciente no sobrevive. ❌\n";
+                                cout << "EFECTO COLATERAL:\nEncuentras chicle de 1997 en su estómago. Muere.❌\n";
                                 vidaPaciente = 0;
                             } else if (decision == 3) {
-                                cout << "\nLa amputación salva su vida, ¿pero a qué costo? ⚠️\n";
+                                cout << "NUEVO LOOK:\nPierna de palo literal. Sobrevive. ¿pero a qué costo? ⚠️\n";
                                 vidaPaciente -= 60;
                                 puntaje += 1;
                             }
 
                         } else if (decision == 2) {
                             system("clear");
-                            cout << "\nEl paciente es dado de alta muy pronto.\nMuere al llegar a su casa. ❌\n";
+                            cout << "Nota de alta: 'No molestar a perros pequeños'.\nMuere camino a la parada. ❌\n";
                             vidaPaciente = 0;
                         }
 
@@ -180,7 +194,7 @@ int main() {
                     }
 
                     // Evaluar resultado final
-                    sleep(2);
+                    sleep(3);
                     cout << "\n............................................................\n";
 
                     // Mostrar barra de vida con FOR
@@ -207,11 +221,24 @@ int main() {
                     }
 
                     if (vidas <= 0) {
-                        cout << "............................................................";
                         sleep(3);
                         ///// DIBUJO GAME OVER. /////
                         system("clear");
-                        cout << "\n\nTe quedaste sin vidas. GAME OVER!\n";
+
+                        cout << R"(
+                                      ╔═════════════════════════════════╗
+                                      ║            GAME OVER            ║
+                                      ║   (pero con diploma de honor)   ║
+                                      ╚═════════════════════════════════╝
+ 
+                                    ¡Felicidades! Lograste lo imposible:
+                
+                                    Perder a todos tus pacientes en tiempo récord.
+                                    Ganarte el título honorífico de ‘Peor Médico del Año’.
+                
+                                    No te preocupes, siempre podés volver mañana y seguir acumulando fracasos
+                                    )" << endl;
+
                         cout << "\nPresioná ENTER para jugar de nuevo\n";
                         cin.ignore().get();
                         system("clear");
@@ -225,11 +252,22 @@ int main() {
 
                     if (pacientesSalvados >= 3) {
                         ///// DIBUJO VICTORIA. /////
-                        cout << "\nBien ahí, Dr/a. " << nombreMedico << "! ¡Salvaste a 3 pacientes seguidos!\n";
-                        cout << "Ya te podés ir a tu casa a descansar. 🏠🩺\n";
+                        cout << R"(
+                        ¡FELICIDADES DR/A. )" << nombreMedico << R"(!
+                        Has logrado lo imposible: 
+
+                        - Sobreviviste a 3 pacientes
+                        - No quemaste el quirófano (completamente)
+                        - Y demostraste que el título de 6 meses online... ¡sí sirve para algo!
+
+                        Tu premio es:
+                        ¡UNA NOCHE DE DESCANSO! 🏠🩺
+
+                        )" << endl;
+                        
                         cout << "Puntaje final: " << puntaje << " decisiones correctas.\n";
     
-                        cout << "\nPresioná ENTER para jugar de nuevo\n";
+                        cout << "\nPresiona ENTER para jugar de nuevo\n";
                         cin.ignore().get();
                         system("clear");
                         break;
@@ -244,10 +282,24 @@ int main() {
             case 2:
                 system("clear");
                 ///// DIBUJO /////
-                cout << "\nHISTORIA:\n";
-                cout << "Sos un joven médico recièn recibido enfrentando decisiones críticas en la sala de urgencias de un hospital público.\n";
-                cout << "Cada elección que tomes puede salvar una vida... o no.\n\n";
-                cout << "Presioná ENTER para volver al menú principal\n";
+                
+cout << R"(Hospital El Último Aliento
+“Donde la muerte es solo un efecto secundario”
+
+Hospital El Último Aliento es el único lugar donde, si hace falta, sos médico, enfermero, psicólogo 
+y cadete de farmacia… 
+¡todo en uno! Estás solo. Los pasillos rezuman miedo, alcohol y una pizca de Clonazepam caducado. 
+Con tu título recién plastificado y una sonrisa que tiembla más que un termómetro, arrancás tu primer turno 
+de 12 horas. 
+Nadie te advirtió de esto: el último médico renunció por Zoom y se llevó hasta el estetoscopio.
+
+Acá vas a tener que elegir entre tratamientos ridículamente riesgosos que ríes para no llorar. 
+Y, créelo o no, a veces la decisión más absurda es la que salva una vida.
+
+¿Estás preparadx para sobrevivir a la guardia más al límite (y corta) de tu carrera?
+)" << endl;
+
+                cout << "Presiona ENTER para volver al menú principal\n";
                 cin.ignore().get();
                 system("clear");
                 break;
@@ -255,8 +307,24 @@ int main() {
             case 3: {
                 system("clear");
                 ///// Dibujo / nombres con tipografia /////
-                cout << "\nDesarrollado por....(completar)\n\n";
-                cout << "Presioná ENTER para volver al menù principal\n";
+cout << R"(*** CRÉDITOS ***
+
+Programado con café frío, ideas retorcidas y noches sin dormir por:
+
+**CIRIÓN CONSTANZA**
+La que programó con memes y oraciones al dios del Wi-Fi
+
+**HIPPLER MARÍA SILVINA**
+Convirtió errores en chistes... seguimos riendo
+
+**MARTINEZ ANDREA** 
+La que arregló bugs con más bugs
+
+**CROCCE ANA LAURA**
+Reina del copy-paste (y del 'esto no se nota')
+)" << endl;
+
+                cout << "Presiona ENTER para volver al menú principal\n";
                 cin.ignore().get();
                 system("clear");
                 break;
@@ -267,15 +335,15 @@ int main() {
                 system("clear");
                 ///// Dibujo con saludo /////
                 cout << "\nGracias por jugar. ¡Hasta pronto!\n\n";
-                cout << "Presioná ENTER para terminar\n";
+                cout << "Presiona ENTER para terminar\n";
                 cin.ignore().get();
                 system("clear");
                 break;
 
             default:
                 system("clear");
-                cout << "\nOpción inválida. Intentá nuevamente.\n\n";
-                cout << "Presioná ENTER para volver al menù principal\n";
+                cout << "\nOpción inválida. Intenta nuevamente.\n\n";
+                cout << "Presiona ENTER para volver al menù principal\n";
                 cin.ignore().get();
                 system("clear");
         }
